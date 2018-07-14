@@ -8,7 +8,7 @@ var GameState = {//hardcoded response object
         "tictactoe": [
             {
               "Position": 0,
-              "Value": "",
+              "Value": "x",
               "AssignedMove": -1
             },
             {
@@ -167,7 +167,7 @@ var GameState = {//hardcoded response object
         "tictactoe": [
             {
               "Position": 0,
-              "Value": "",
+              "Value": "o",
               "AssignedMove": -1
             },
             {
@@ -525,23 +525,37 @@ function initialize(){
 
   //works it way throught the tables adds clases to later be identifiable
   var tableCellsTemp; //will be a container of html elements of type td
-  for(var i = 0; i < 9 ; i++){
-    tableCellsTemp = $("#table" + i.toString() + " tr td");
-    tableCellsTemp.addClass("Table" + i.toString() + "Cell")
-    //for(var j = 0; j < 9; j++){
-        //console.log("Cell" + j.toString() + "Table" + i.toString());
-        // tableCellsTemp[j].addClass( "Cell" + j.toString() + "Table" + i.toString() );
-        //console.log(tableCellsTemp[j]);
-    //}
+  for(var j = 0; j < 9 ; j++){
+
+    $("#table" + j.toString() + " tr td").each( function(index, obj) {
+      //each(funct(selectorIndex, DOM-object)) $(this) => jQueryElement
+      $(this).addClass("Table" + j.toString() + "Cell" + index.toString());
+    });
+
   }
 
   // var tableCellsTemp = $("#table0").find("tr td");
   // tableCellsTemp[0].addClass = "x";
-
+  applyGameState(GameState);
 }
 
+//this gets called when on initialization or when we need to re-render the game board
+//from server response
+function applyGameState(responseObject){
+  //traverse through tables and cells
+  var resObjTable;
+  //obj.tictactoes[i].tictactoe[j].Value
+  for(var i = 0; i < 9 ; i++){
+    resObjTable = responseObject.tictactoes[i];
+    $("#table" + i.toString() + " tr td").each( function(index, obj) {
 
-function applyGameState(){
+      //apply values from responseObject
+      obj.innerText = resObjTable.tictactoe[index].Value;
+    });
+
+  }
+
+
 
 }
 
