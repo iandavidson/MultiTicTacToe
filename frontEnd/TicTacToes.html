@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <!-- 3.3.1  was the version that didnt work with css->bootstrap, using 1.9.1 as suggested  online-->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="TicTacToes.css">
+
+  <script type="text/javascript" src="TicTacToes.js"> </script>
+  <title>Tic Tac Toes</title>
+</head>
+
+<body>
+
+  <h1> <span id="H1Span">Tic Tac Toes </span></h1>
+  <a onclick="clickTest()"> Hey Click Me </a>
+  <br <!-- div block for modal maybe?-->
+
+
+  <!--  new game button-->
+
+
+  <!--
+  best case:
+      use jquery in script to do DOM manipulation
+
+  worst case use this slop:
+      embedded hardcoded call: <a click=blah(tableX, cellX)> <td>X</td> </a>
+    -->
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table0">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table1">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table2">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table3">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table4">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table5">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table6">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div class="col-xs-4 col-md-4">
+    <table id="table7">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-xs-4 col-md-4">
+    <table id="table8">
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="hori"></td>
+        <td class="vert hori"></td>
+        <td class="hori"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td class="vert"></td>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+
+
+
+  <!--  submit move button, for now maybe javascript script call  -->
+
+  <!-- <script type="text/javascript" src="TicTacToes.js">
+  </script> -->
+</body>
+
+</html>

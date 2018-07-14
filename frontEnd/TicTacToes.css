@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+
+
+td {
+  /*  both width & height were 100 before*/
+  width: 75px;
+  height: 75px;
+  text-align: center;
+  font-size: 45px;
+}
+table {
+  margin: 5px auto;
+}
+.vert {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+.hori {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
